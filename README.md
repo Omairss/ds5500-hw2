@@ -26,7 +26,7 @@ Since there are four variables(gdp, life expectency, time and continent) to capt
 To esblish a baseline a simple linear regression model was fit as X = GDP and Y = Life Expectancy as shown in the below figure. This model merely acheived an r-square of 0.338. Furthermore, this model had  a very high conditional value meaning it was extremely sensitive to the input variable.
 
 ![baseline](images/prob4-baseline-lof.png)
-![residual](images/prob4-baseline-residual.png)
+![residual](images/prob-4-baseline-residual.png)
 
 Since the pattern looked logarithmic, (and it made sense that life expectency flattened out after 85), I decided to log tranform Y and X. Furthermore, the distribution of residuals still did not look normal and followed a negative curvature. To resolve that, I fit it to a second order polynomial. As shown in the plot below, this results in the residuals being normally distributed. The resulting r-sqaured increased to 0.622 and the condition value reduced to just 46.
 
