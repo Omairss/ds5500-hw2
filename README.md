@@ -35,18 +35,59 @@ Baseline residual:
 
 Since the pattern looked logarithmic, (and it made sense that life expectency flattened out after 85), I decided to log tranform Y. Furthermore, the distribution of residuals still did not look normal and followed a negative curvature. To resolve that, I fit it to a second order polynomial. As shown in the plot below, this results in the residuals being normally distributed. The resulting r-sqaured increased to 0.622 and the condition value reduced to just 46.
 
-Line of fit with Y log transformed:
+Line of fit with X and Y log transformed:
 
 ![baseline](images/prob4-final-lof.png)
 
-Residuals with Y log transformed:
+Residuals with X and Y log transformed:
 
 ![residual](images/prob4-final-residual.png)
 
-Finally, using time as a covariate, we acheive an r-squared of 0.677.
+This model is represented by ***log(Y) = log(X) + X + C*** and achieved an r-squared of 0.60.
 
+where, Y = life_expectancy_years
+       X = gdppercapita_us_inflation_adjusted
+
+
+Finally, using time as a covariate, we acheive an r-squared of 0.68.
+This model has the formula ***log(Y) = log(X0) + X0 + X1 + C***
+
+where, Y = life_expectancy_years
+       X0 = gdppercapita_us_inflation_adjusted
+       X1 = time
+
+The p-values for both the variables are significant.
 
 
 
 
 ## Problem 5
+
+The baseline regression model here with X = GDP/Capita and Y = Child mortality, we get a poor r-squared of 0.21.
+
+Baseline line of fit:
+
+![baseline](images/prob5-baseline-lof.png)
+
+Baseline residual:
+
+![residual](images/prob5-baseline-residual.png)
+
+Since the the relationship also looked like it was logarithimic, both X and Y were log transformed. The scatter plot looks as follows:
+
+Line of fit with square_root(X) and Y log transformed:
+
+![baseline](images/prob5-final-lof.png)
+
+Residuals with square_root(X) and Y log transformed:
+
+![residual](images/prob5-final-residual.png)
+
+As shown in the scatter plot, the residuals are normally distributed. The model was fit as follows:
+
+***log(Y) = square_root(X0) + X0 + log(X1) + C***
+
+where, Y = life_expectancy_years
+       X0 = gdppercapita_us_inflation_adjusted
+       X1 = time
+
