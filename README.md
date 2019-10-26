@@ -54,11 +54,15 @@ This model has the formula ***log(Y) = log(X0) + X0 + X1 + C***
 
 where, Y = life_expectancy_years
        X0 = gdppercapita_us_inflation_adjusted
-       X1 = time
+       X1 = time 
 
 The p-values for both the variables are significant.
 
+Visualizing all three together, we get:
 
+![all_three](images/prob4-allthree.png)
+
+As shown in the plot and confirmed by the model, time and GDP/capita together, independently contributed to the increase in life expectancy. This can be explained by increases in simple, cheap but effective technologies such as condoms and vaccines. GDP/capita has a more obvious, direct connection to increases in life expectancy with countries with higher GDP's being able to afford more sophisticated healthcare.
 
 
 ## Problem 5
@@ -91,3 +95,8 @@ where, Y = life_expectancy_years
        X0 = gdppercapita_us_inflation_adjusted
        X1 = time
 
+Visualizing all three together, we get:
+
+![all_three](images/prob5-allthree.png)
+
+Again, as shown in the plot and confirmed by the model, time and GDP/capita together, independently contributed to the decrease in Child Mortality. The contributing factors could again be simple, cheap yet effective care of the young with advances like vaccines, which tend to have a network effect - the more children that are vaccinated, the less likely someone who is not vaccinated, in the same commnity, is to get infected. Since children are likely to have a weaker immune system, the network effect is likly to be stronger. This might be the reason why time has a larger affect size in this case than in the case of life expectancy.
