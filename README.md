@@ -45,15 +45,15 @@ Residuals with X and Y log transformed:
 
 This model is represented by ***log(Y) = log(X) + X + C*** and achieved an r-squared of 0.60.
 
-where, Y = life_expectancy_years
+where, Y = life_expectancy_years 
        X = gdppercapita_us_inflation_adjusted
 
 
 Finally, using time as a covariate, we acheive an r-squared of 0.68.
 This model has the formula ***log(Y) = log(X0) + X0 + X1 + C***
 
-where, Y = life_expectancy_years
-       X0 = gdppercapita_us_inflation_adjusted
+where, Y = life_expectancy_years 
+       X0 = gdppercapita_us_inflation_adjusted 
        X1 = time 
 
 The p-values for both the variables are significant.
