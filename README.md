@@ -25,21 +25,21 @@ Since there are four variables(gdp, life expectency, time and continent) to capt
 ## Problem 4
 To esblish a baseline a simple linear regression model was fit as X = GDP and Y = Life Expectancy as shown in the below figure. This model merely acheived an r-square of 0.338. Furthermore, this model had  a very high conditional value meaning it was extremely sensitive to the input variable.
 
-Baseline line of fit:
+### Baseline line of fit:
 
 ![baseline](images/prob-4-baseline-lof.png)
 
-Baseline residual:
+### Baseline residual:
 
 ![residual](images/prob4-baseline-residual.png)
 
 Since the pattern looked logarithmic, (and it made sense that life expectency flattened out after 85), I decided to log tranform Y. Furthermore, the distribution of residuals still did not look normal and followed a negative curvature. To resolve that, I fit it to a second order polynomial. As shown in the plot below, this results in the residuals being normally distributed. The resulting r-sqaured increased to 0.622 and the condition value reduced to just 46.
 
-Line of fit with X and Y log transformed:
+### Line of fit with X and Y log transformed:
 
 ![baseline](images/prob4-final-lof.png)
 
-Residuals with X and Y log transformed:
+### Residuals with X and Y log transformed:
 
 ![residual](images/prob4-final-residual.png)
 
@@ -66,26 +66,28 @@ Visualizing all three together, we get:
 
 As shown in the plot and confirmed by the model, time and GDP/capita together, independently contributed to the increase in life expectancy. This can be explained by increases in simple, cheap but effective technologies such as condoms and vaccines. GDP/capita has a more obvious, direct connection to increases in life expectancy with countries with higher GDP's being able to afford more sophisticated healthcare.
 
+### Autocorrelation
+Since the data is time series, it's apparent that the data for GDP/captia and life expectancy is auto-correlated over some time lag. That is to say the value for GDP per capita at time t[1] will be coorelated with GDP per capita at t[0]. Since linear regression assumes its features to be 'independent', having autocorrealtion in the data will voilate this assumption and could lead to a misleading analysis. For the purposes of the homework, however, 'time' is added as a variable and we hope that the parameter for time captures most of the autocorrelation and the effect size of GDP per capita and life expectancy is correct. 
 
 ## Problem 5
 
 The baseline regression model here with X = GDP/Capita and Y = Child mortality, we get a poor r-squared of 0.21.
 
-Baseline line of fit:
+### Baseline line of fit:
 
 ![baseline](images/prob5-baseline-lof.png)
 
-Baseline residual:
+### Baseline residual:
 
 ![residual](images/prob5-baseline-residual.png)
 
 Since the the relationship also looked like it was logarithimic, both X and Y were log transformed. The scatter plot looks as follows:
 
-Line of fit with square_root(X) and Y log transformed:
+### Line of fit with square_root(X) and Y log transformed:
 
 ![baseline](images/prob5-final-lof.png)
 
-Residuals with square_root(X) and Y log transformed:
+### Residuals with square_root(X) and Y log transformed:
 
 ![residual](images/prob5-final-residual.png)
 
@@ -98,8 +100,11 @@ where,
 * X0 = gdppercapita_us_inflation_adjusted
 * X1 = time
 
-Visualizing all three together, we get:
+### Visualizing all three together, we get:
 
 ![all_three](images/prob5-allthree.png)
 
 Again, as shown in the plot and confirmed by the model, time and GDP/capita together, independently contributed to the decrease in Child Mortality. The contributing factors could again be simple, cheap yet effective care of the young with advances like vaccines, which tend to have a network effect - the more children that are vaccinated, the less likely someone who is not vaccinated, in the same commnity, is to get infected. Since children are likely to have a weaker immune system, the network effect is likly to be stronger. This might be the reason why time has a larger affect size in this case than in the case of life expectancy.
+
+### Autocorrelation
+Since the data is time series, it's apparent that the data for GDP/captia and child mortality is auto-correlated over some time lag. That is to say the value for GDP per capita at time t[1] will be coorelated with GDP per capita at t[0]. Since linear regression assumes its features to be 'independent', having autocorrealtion in the data will voilate this assumption and could lead to a misleading analysis. For the purposes of the homework, however, 'time' is added as a variable and we hope that the parameter for time captures most of the autocorrelation and the effect size of GDP per capita and child mortality is correct. 
